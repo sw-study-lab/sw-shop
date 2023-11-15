@@ -9,7 +9,8 @@
     "dev:server": "nodemon"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",
