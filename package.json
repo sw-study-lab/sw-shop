@@ -4,5 +4,13 @@
   "description": "> 소프트웨어 공학 03분반 팀프로젝트입니다.",
   "main": "index.js",
   "author": "sw-study-lab",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.3"
+  }
 }
