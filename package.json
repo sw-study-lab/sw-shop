@@ -1,0 +1,8 @@
+{
+  "name": "sw-shop",
+  "version": "1.0.0",
+  "description": "> 소프트웨어 공학 03분반 팀프로젝트입니다.",
+  "main": "index.js",
+  "author": "sw-study-lab",
+  "license": "MIT"
+}
