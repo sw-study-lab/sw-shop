@@ -4,7 +4,7 @@ const productRouter = express.Router();
 
 productRouter
   .route("/")
-  .get((req, res, next) => res.send("전체 상품 목록"))
+  .get((req, res, next) => res.render("home"))
   .post((req, res, next) => res.send("상품 생성"));
 
 productRouter
