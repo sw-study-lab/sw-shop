@@ -1,4 +1,4 @@
-import createUserDto from "../dto/create-userDto";
+import createUserDto from "../dtos/create-userDto";
 import * as UserService from "../services/userService";
 
 export const getUsers = (req, res, next) => {

@@ -1,6 +1,13 @@
 import express from "express";
-import { getJoin } from "./controllers/authController";
-import { publicOnly } from "../../middlewares/auth";
+import {
+  getJoin,
+  getLogin,
+  logout,
+  postLogin,
+} from "./controllers/authController";
+import { privateOnly, publicOnly } from "../../middlewares/auth";
+import { validateDto } from "../../middlewares/validateDto";
+import loginDto from "./dtos/loginDto";
 
 const authRouter = express.Router();
 
@@ -8,9 +15,10 @@ authRouter.route("/join").all(publicOnly).get(getJoin);
 
 authRouter
   .route("/login")
-  .get((req, res, next) => res.send("login 페이지 불러오기"))
-  .post((req, res, next) => res.send("login post 요청하기"));
+  .all(publicOnly)
+  .get(getLogin)
+  .post(validateDto(loginDto), postLogin);
 
-authRouter.route("/logout").get((req, res, next) => res.send("로그아웃 요청"));
+authRouter.all(privateOnly).route("/logout").get(logout);
 
 export default authRouter;

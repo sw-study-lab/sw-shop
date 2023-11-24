@@ -7,7 +7,7 @@ import {
   updateOne,
 } from "./controllers/userController";
 import { validateDto } from "../../middlewares/validateDto";
-import createUserDto from "./dto/create-userDto";
+import createUserDto from "./dtos/create-userDto";
 import { publicOnly } from "../../middlewares/auth";
 
 const userRouter = express.Router();
