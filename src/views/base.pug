@@ -1,12 +1,28 @@
 doctype html 
 html(lang="ko")
     head 
-        title base | Swhub
+        title base | #{siteName}
         link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
     body 
         header
             a(href="/").header__logo
                 i.fab.fa-github
+        nav 
+            ul 
+                li 
+                    a(href="/") Home
+                if loggedIn
+                    li 
+                        a(href="/upload") 업로드
+                    li 
+                        a(href="/my-profile") 나의 프로필
+                    li
+                        a(href="/logout") 로그아웃
+                else
+                    li
+                        a(href="/join") 회원가입
+                    li
+                        a(href="/login") 로그인
         main
             if errorMessage
                 span=errorMessage

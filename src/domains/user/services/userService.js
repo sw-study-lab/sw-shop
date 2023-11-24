@@ -1,6 +1,10 @@
 import { ValidationError } from "../../../errors";
-import createUserDto from "../dto/create-userDto";
+import createUserDto from "../dtos/create-userDto";
 import User from "../models/UserModel";
+
+export const getUserByUsername = (username) => {
+  return User.findOne({ username });
+};
 
 export const createUser = async (userDetails) => {
   const { password2, ...data } = new createUserDto(userDetails);
