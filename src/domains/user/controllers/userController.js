@@ -1,9 +1,18 @@
+import createUserDto from "../dto/create-userDto";
+import * as UserService from "../services/userService";
+
 export const getUsers = (req, res, next) => {
   return res.send("유저목록");
 };
 
-export const postUser = (req, res, next) => {
-  // 유저 생성
+export const postUser = async (req, res, next) => {
+  try {
+    const data = new createUserDto(req.body);
+    await UserService.createUser(data);
+    return res.redirect(303, "/auths/login");
+  } catch (error) {
+    next(error);
+  }
 };
 
 export const getOne = (req, res, next) => {
