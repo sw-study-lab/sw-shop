@@ -1,11 +1,15 @@
 import express from "express";
+import {
+  getOne,
+  getUsers,
+  postUser,
+  removeOne,
+  updateOne,
+} from "./controllers/userController";
 
 const userRouter = express.Router();
 
-userRouter
-  .route("/")
-  .get((req, res, next) => res.send("전체 유저 목록"))
-  .post((req, res, next) => res.send("user 생성"));
+userRouter.route("/").get(getUsers).post(postUser);
 
 userRouter
   .route("/join")
@@ -19,14 +23,6 @@ userRouter
 
 userRouter.route("/logout").get((req, res, next) => res.send("로그아웃 요청"));
 
-userRouter
-  .route("/:id")
-  .get((req, res, next) =>
-    res.send(`${req.params.id} 번 째 유저 정보 받아오기`)
-  )
-  .put((req, res, next) =>
-    res.send(`${req.params.id} 번째 유저 정보 업데이트 하기`)
-  )
-  .delete((req, res, next) => res.send(`${req.params.id} 번째 유저 삭제`));
+userRouter.route("/:id").get(getOne).put(updateOne).delete(removeOne);
 
 export default userRouter;
