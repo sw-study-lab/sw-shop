@@ -1,10 +1,10 @@
 import express from "express";
+import { getJoin } from "./controllers/authController";
+import { publicOnly } from "../../middlewares/auth";
 
 const authRouter = express.Router();
 
-authRouter
-  .route("/join")
-  .get((req, res, next) => res.send("회원가입 페이지 불러오기"));
+authRouter.route("/join").all(publicOnly).get(getJoin);
 
 authRouter
   .route("/login")
