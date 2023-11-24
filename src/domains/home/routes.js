@@ -12,15 +12,15 @@ homeRouter
   .route("/upload")
   .get((req, res, next) => res.redirect("/products/upload"));
 
-homeRouter.route("/join").get((req, res, next) => res.redirect("/users/join"));
+homeRouter.route("/join").get((req, res, next) => res.redirect("/auths/join"));
 
 homeRouter
   .route("/login")
-  .get((req, res, next) => res.redirect("/users/login"));
+  .get((req, res, next) => res.redirect("/auths/login"));
 
 homeRouter
   .route("/logout")
-  .get((req, res, next) => res.redirect("/users/logout"));
+  .get((req, res, next) => res.redirect("/auths/logout"));
 
 homeRouter
   .route("/my-profile")
