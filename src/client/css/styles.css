@@ -1,0 +1,49 @@
+/* Components */
+@import url("./components/header.css");
+@import url("./components/sidebar.css");
+
+/* Screens */
+
+@import url("./screens/home.css");
+@import url("./screens/login.css");
+@import url("./screens/join.css");
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fce4ec; /* 파스텔 핑크 배경 색상 */
+  color: #333;
+}
+
+header {
+  background-color: #ff80ab; /* 파스텔 핑크 헤더 배경 색상 */
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+#category {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffd3e0; /* 파스텔 핑크 카테고리 배경 색상 */
+  padding: 10px;
+}
+
+#errorMessage {
+  display: inline-block;
+  margin: 0 40%;
+  padding: 10px;
+  font-weight: bold;
+  color: red;
+}
+
+footer {
+  background-color: #ff80ab; /* 파스텔 핑크 푸터 배경 색상 */
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

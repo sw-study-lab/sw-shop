@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffd3e0; /* 파스텔 핑크 헤더 하단 배경 색상 */
+  padding: 10px;
+}
+
+.header_search {
+  flex-grow: 1;
+  margin: 0 10px;
+  background-color: #fff; /* 흰색 검색창 배경 */
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.header_find,
+.header_sidebar_btn {
+  background-color: #ff80ab; /* 파스텔 핑크 버튼 배경 색상 */
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header_sidebar_btn {
+  margin-left: 10px; /* SEARCH 버튼과 간격 추가 */
+}

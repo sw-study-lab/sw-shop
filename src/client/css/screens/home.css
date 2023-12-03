@@ -1,0 +1,29 @@
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 20px auto; /* 중앙 정렬을 위해 margin 속성 수정 */
+  max-width: 800px; /* 그리드 컨테이너의 최대 너비 설정 */
+}
+
+.product {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 90%; /* 상품의 가로 크기 설정 */
+  height: 300px; /* 상품의 세로 크기 설정 */
+  background-color: #fff; /* 흰색 상품 배경 색상 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 약한 그림자 효과 */
+  margin: 0 auto; /* 가운데 정렬을 위해 margin 속성 추가 */
+  cursor: pointer; /* 포인터 커서 추가 */
+}
+
+.product h2,
+.product .products-mixin__data {
+  margin: 0; /* 상품 제목과 설명의 기본 마진 제거 */
+}
+
+.products-mixin__data img {
+  width: 70%;
+}

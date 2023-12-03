@@ -1,0 +1,33 @@
+.login {
+  padding: 20px;
+  height: 500px;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.login label {
+  margin-bottom: 5px;
+}
+
+.login input,
+.login button {
+  margin-bottom: 10px;
+  padding: 16px;
+}
+
+.login button {
+  background-color: #ff80ab;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.login .auth-switch {
+  margin: auto;
+}
