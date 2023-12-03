@@ -1,11 +1,21 @@
 import express from "express";
+import { privateOnly } from "../../middlewares/auth";
+import { getUpload, postProduct } from "./controllers/productController";
+import { productUpload } from "../../middlewares/uploads";
+import { validateDto } from "../../middlewares/validateDto";
+import createProductDto from "./dtos/create-userDto";
 
 const productRouter = express.Router();
 
 productRouter
   .route("/")
   .get((req, res, next) => res.render("home"))
-  .post((req, res, next) => res.send("상품 생성"));
+  .post(
+    privateOnly,
+    productUpload.single("product"),
+    validateDto(createProductDto),
+    postProduct
+  );
 
 productRouter
   .route("/search")
@@ -13,10 +23,7 @@ productRouter
     res.send(`Searching by... ${req.query.keyword} products`)
   );
 
-productRouter
-  .route("/upload")
-  .get((req, res, next) => res.send("상품 등록 페이지 불러오기"))
-  .post((req, res, next) => res.send("상품 등록 post 요청하기"));
+productRouter.route("/upload").all(privateOnly).get(getUpload);
 
 productRouter
   .route("/:id")

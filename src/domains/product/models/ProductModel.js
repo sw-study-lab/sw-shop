@@ -2,15 +2,13 @@ import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
   fileUrl: { type: String, required: true },
-  designCode: { type: String, required: true },
   title: { type: String, required: true, trim: true },
   description: {
     type: String,
     required: true,
-    default: "해당 설계도에 대한 소개 내용은 없습니다.",
+    default: "해당 설계도에 대한 설명 내용은 없습니다.",
     trim: true,
   },
-  account: { type: String, required: true, trim: true },
   price: {
     type: Number,
     required: true,
@@ -19,7 +17,6 @@ const productSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
   meta: {
     hits: { type: Number, default: 0 },
-    sellCount: { type: Number, default: 0 },
   },
   owner: { type: mongoose.Schema.Types.ObjectId, required: true, ref: "User" },
 });
