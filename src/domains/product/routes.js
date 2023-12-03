@@ -1,6 +1,7 @@
 import express from "express";
 import { privateOnly } from "../../middlewares/auth";
 import {
+  getProduct,
   getProductList,
   getUpload,
   postProduct,
@@ -31,9 +32,7 @@ productRouter.route("/upload").all(privateOnly).get(getUpload);
 
 productRouter
   .route("/:id")
-  .get((req, res, next) =>
-    res.send(`${req.params.id} 번 째 상품 정보 받아오기`)
-  )
+  .get(getProduct)
   .put((req, res, next) =>
     res.send(`${req.params.id} 번째 상품 정보 업데이트 하기`)
   )
