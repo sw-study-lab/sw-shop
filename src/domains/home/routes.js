@@ -1,4 +1,5 @@
 import express from "express";
+import { privateOnly } from "../../middlewares/auth";
 
 const homeRouter = express.Router();
 
@@ -24,6 +25,7 @@ homeRouter
 
 homeRouter
   .route("/my-profile")
-  .get((req, res, next) => res.redirect("/users/1"));
+  .all(privateOnly)
+  .get((req, res, next) => res.redirect(`/users/${req.session.user._id}`));
 
 export default homeRouter;

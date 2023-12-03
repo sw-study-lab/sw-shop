@@ -8,6 +8,7 @@
 @import url("./screens/login.css");
 @import url("./screens/join.css");
 @import url("./screens/productDetail.css");
+@import url("./screens/profile.css");
 
 body {
   font-family: Arial, sans-serif;

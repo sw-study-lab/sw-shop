@@ -15,11 +15,17 @@ export const postUser = async (req, res, next) => {
   }
 };
 
-export const getOne = (req, res, next) => {
+export const getOne = async (req, res, next) => {
   const {
     params: { id: userId },
   } = req;
-  return res.send(`${userId} 번 째 유저 정보 받아오기`);
+  try {
+    const user = await UserService.userDetail(userId);
+    const pageTitle = "myProfile";
+    return res.render("profile", { user, pageTitle });
+  } catch (error) {
+    next(error);
+  }
 };
 
 export const updateOne = (req, res, next) => {

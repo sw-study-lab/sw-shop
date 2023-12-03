@@ -2,11 +2,13 @@ import loginDto from "../dtos/loginDto";
 import * as LoginService from "../services/loginService";
 
 export const getJoin = (req, res, next) => {
-  return res.render("join");
+  const pageTitle = "Join";
+  return res.render("join", { pageTitle });
 };
 
 export const getLogin = (req, res, next) => {
-  return res.render("login");
+  const pageTitle = "Login";
+  return res.render("login", { pageTitle });
 };
 
 export const postLogin = async (req, res, next) => {
