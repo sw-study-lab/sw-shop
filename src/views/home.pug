@@ -1,4 +1,9 @@
 extends base
+include mixins/product
 
 block content
-     p 홈페이지입니다.
+     div.products-container
+          each product in products
+               +product(product)
+          else 
+               span Sorry nothing found.

@@ -1,0 +1,38 @@
+#sidebar {
+  position: fixed;
+  top: 0;
+  right: -500px;
+  height: 100%;
+  width: 450px;
+  background-color: #ffffff;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: right 0.5s ease;
+}
+
+#sidebar_design {
+  margin-top: 50px;
+}
+
+#sidebar_design button {
+  width: 150px;
+  margin: 3px;
+}
+
+#sidebar_design .sidebar__auth {
+  margin: 5px 5px;
+  width: 120px;
+  height: 100px;
+}
+
+#sidebar_close {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 440px;
+}

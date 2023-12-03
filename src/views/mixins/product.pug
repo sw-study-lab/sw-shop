@@ -1,0 +1,8 @@
+mixin product(product)
+    div.product(onclick=`location.href='/products/${product.id}'`)
+        h2=product.title
+        div.products-mixin__data
+            img.product-mixin__thumb(src=`/${product.fileUrl}` alt="제품 이미지")
+            div
+                p 가격: #{product.price} $
+        

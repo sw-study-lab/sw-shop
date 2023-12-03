@@ -1,0 +1,33 @@
+.join {
+  padding: 20px;
+  height: 500px;
+}
+
+.join form {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.join label {
+  margin-bottom: 5px;
+}
+
+.join input,
+.join button {
+  margin-bottom: 10px;
+  padding: 16px;
+}
+
+.join button {
+  background-color: #ff80ab;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.join .auth-switch {
+  margin: auto;
+}

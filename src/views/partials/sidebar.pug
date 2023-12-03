@@ -1,0 +1,11 @@
+aside#sidebar
+    button#sidebar_close(onclick="toggleSidebar()") X close
+    div#sidebar_design
+        if loggedIn
+            div
+                button#sidebar_mypage(onclick="location.href='/my-profile'") MYPAGE
+                button#sidebar_upload(onclick="location.href='/upload'") UPLOAD
+                button#sidebar_logout(onclick="location.href='/logout'") LogOut
+        else
+            button.sidebar__auth(onclick="location.href='/login'") LOGIN
+            button.sidebar__auth(onclick="location.href='/join'") JOIN

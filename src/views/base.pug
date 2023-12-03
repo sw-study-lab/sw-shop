@@ -3,27 +3,27 @@ html(lang="ko")
     head 
         title base | #{siteName}
         link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+        link(rel="stylesheet", href="/static/css/styles.css")
     body 
-        header
-            a(href="/").header__logo
-                i.fab.fa-github
-        nav 
-            ul 
-                li 
-                    a(href="/") Home
-                if loggedIn
-                    li 
-                        a(href="/upload") 업로드
-                    li 
-                        a(href="/my-profile") 나의 프로필
-                    li
-                        a(href="/logout") 로그아웃
-                else
-                    li
-                        a(href="/join") 회원가입
-                    li
-                        a(href="/login") 로그인
-        main
-            if errorMessage
-                span=errorMessage
-            block content
+        include partials/header
+        div#category
+            div.product_category_1 카테고리1
+            div.product_category_2 카테고리2
+            div.product_category_3 카테고리3
+        include partials/sidebar
+        if errorMessage
+            span#errorMessage=errorMessage
+        block content
+        footer
+            | © 2023 SW 거래소. All rights reserved.
+    script.
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.right === '0px') {
+                sidebar.style.right = '-500px';
+            } else {
+                sidebar.style.right = '0px';
+            }
+        }
+
+    

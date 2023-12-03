@@ -1,6 +1,10 @@
 import express from "express";
 import { privateOnly } from "../../middlewares/auth";
-import { getUpload, postProduct } from "./controllers/productController";
+import {
+  getProductList,
+  getUpload,
+  postProduct,
+} from "./controllers/productController";
 import { productUpload } from "../../middlewares/uploads";
 import { validateDto } from "../../middlewares/validateDto";
 import createProductDto from "./dtos/create-userDto";
@@ -9,7 +13,7 @@ const productRouter = express.Router();
 
 productRouter
   .route("/")
-  .get((req, res, next) => res.render("home"))
+  .get(getProductList)
   .post(
     privateOnly,
     productUpload.single("product"),
