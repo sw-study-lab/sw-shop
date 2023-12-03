@@ -34,7 +34,6 @@ export const getProduct = async (req, res, next) => {
   } = req;
   try {
     const product = await ProductService.productDetail(id);
-    console.log(product);
     return res.render("productDetail", { product });
   } catch (error) {
     next(error);

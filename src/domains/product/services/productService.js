@@ -5,6 +5,10 @@ export const findAll = () => {
   return Product.find({}).sort({ createdAt: "desc" }).populate("owner");
 };
 
+export const getProductById = (productId) => {
+  return Product.findById(productId);
+};
+
 export const createProduct = ({
   fileUrl,
   title,
