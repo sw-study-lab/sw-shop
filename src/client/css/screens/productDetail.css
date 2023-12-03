@@ -24,7 +24,8 @@
   border: none;
   cursor: pointer;
   font-size: 24px;
-  color: #ff91af; /* 하트 색상 */
+  color: rgb(173, 168, 168); /* 하트 색상 */
+  text-decoration: solid;
 }
 
 .product_detail .buy_stats {

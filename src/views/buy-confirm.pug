@@ -1,0 +1,27 @@
+doctype html 
+html(lang="ko")
+    head
+    title 구매 확인 페이지
+    link(rel="stylesheet", href="/static/css/screens/buy-confrim.css")
+    body
+        div.modal
+            h2 구매 하시겠습니까?
+            button#confirmButton 예
+            button.cancel(onclick="closeModal()") 아니요
+            div.additional-description
+                h3 이용약관
+                p 
+                    | 해당 상품은 환불이 불가능합니다.
+                    | 신중하게 고려하세요
+    script.
+        // 아니요 버튼을 클릭하면 모달을 닫고 이전 페이지로 이동
+        document.querySelector('.cancel').addEventListener('click', function () {
+            alert("구매가 취소되었습니다!"); // 실제로는 이전 페이지로 이동하는 로직으로 변경
+            window.location.href = "/products/#{product._id}";
+        });
+
+        // 예 버튼을 클릭하면 모달을 닫고 구매 확인 팝업을 띄움
+        document.getElementById('confirmButton').addEventListener('click', function () {
+            window.location.href = `/orders/#{product._id}`; // 구매 확인 페이지로 이동
+            alert("구매가 완료되었습니다!"); // 실제로는 구매 확인 페이지로 이동하는 로직으로 변경
+        });

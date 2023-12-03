@@ -1,6 +1,6 @@
 export const privateOnly = (req, res, next) => {
   if (!req.session.loggedIn) {
-    return res.redirect("/user/login");
+    return res.redirect("/auths/login");
   }
   next();
 };
