@@ -1,0 +1,25 @@
+extends base
+
+block content
+    section.product_detail
+        h2 제품 상세 페이지
+        img.product_detail.product_image(src=`/${product.fileUrl}` alt="제품 이미지")
+        if String(product.owner._id) !== String(loggedInUser._id)
+            button.product_detail.buy_select(onclick="location.href='/my-profile'") &#10084; 찜
+        div.product_detail.product_Info
+            h3=product.title
+            p=product.description
+        div.product_detail.buy_stats
+            p.product_detail.buy_price 가격: #{product.price}$
+            p.product_detail.buy_hits 구매 횟수: #{product.meta.hits}
+        if String(product.owner._id) !== String(loggedInUser._id)
+            button.product_detail#buy_purchase 구매
+
+block script
+    if String(product.owner._id) !== String(loggedInUser._id)
+        script.
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('buy_purchase').addEventListener('click', function () {
+                    window.location.href = "buy_confirmation.html";
+                });
+            });

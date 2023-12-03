@@ -7,6 +7,7 @@
 @import url("./screens/home.css");
 @import url("./screens/login.css");
 @import url("./screens/join.css");
+@import url("./screens/productDetail.css");
 
 body {
   font-family: Arial, sans-serif;
@@ -21,6 +22,7 @@ header {
   color: #fff;
   padding: 10px;
   text-align: center;
+  cursor: pointer;
 }
 
 #category {
@@ -28,6 +30,10 @@ header {
   justify-content: space-around;
   background-color: #ffd3e0; /* 파스텔 핑크 카테고리 배경 색상 */
   padding: 10px;
+}
+
+#category div {
+  cursor: pointer;
 }
 
 #errorMessage {

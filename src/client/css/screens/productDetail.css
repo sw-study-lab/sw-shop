@@ -1,0 +1,57 @@
+.product_detail {
+  background-color: #fff; /* 섹션 배경색 */
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px; /* 섹션 모서리를 둥글게 만듭니다. */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+}
+
+.product_detail h2 {
+  color: #333; /* 섹션 제목 색상 */
+}
+
+.product_detail button {
+  background-color: #ff91af; /* 버튼 배경색 */
+  color: #fff; /* 버튼 텍스트 색상 */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product_detail .buy_select {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #ff91af; /* 하트 색상 */
+}
+
+.product_detail .buy_stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.product_detail .buy_hits,
+.product_detail .buy_price {
+  margin-right: 20px; /* 조회수와 가격 사이 간격 조절 */
+}
+
+.product_detail p {
+  margin: 0;
+}
+
+.product_detail .product_image {
+  max-width: 100%; /* 이미지의 최대 너비를 부모 요소의 너비에 맞춤 */
+  max-height: 300px; /* 이미지의 최대 높이를 300px로 제한 (원하는 크기로 조절) */
+  height: auto; /* 비율을 유지한 채로 높이를 자동으로 조절 */
+  margin-top: 20px;
+}
+/* 상품 설명을 담은 설명 박스 스타일 */
+.product-description {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
