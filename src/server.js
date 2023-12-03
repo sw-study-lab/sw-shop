@@ -26,6 +26,7 @@ app.use(
   })
 );
 app.use(locals);
+app.use("/uploads", express.static("uploads"));
 app.use(mainRoutes);
 app.use(handleNotFound);
 app.use(errorHandler);
