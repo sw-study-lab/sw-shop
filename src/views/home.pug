@@ -1,0 +1,9 @@
+extends base
+include mixins/product
+
+block content
+     div.products-container
+          each product in products
+               +product(product)
+          else 
+               span Sorry nothing found.

@@ -1,0 +1,28 @@
+doctype html 
+html(lang="ko")
+    head 
+        title #{pageTitle} | #{siteName}
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+        link(rel="stylesheet", href="/static/css/styles.css")
+    body 
+        include partials/header
+        div#category
+            div.product_category_1 카테고리1
+            div.product_category_2 카테고리2
+            div.product_category_3 카테고리3
+        include partials/sidebar
+        if errorMessage
+            span#errorMessage=errorMessage
+        block content
+        footer
+            | © 2023 SW 거래소. All rights reserved.
+    script.
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.right === '0px') {
+                sidebar.style.right = '-500px';
+            } else {
+                sidebar.style.right = '0px';
+            }
+        }
+    block script
