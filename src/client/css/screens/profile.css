@@ -1,0 +1,66 @@
+#my_Info {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ff8fb3; /* 핑크 테두리 */
+  border-radius: 8px;
+  padding: 20px;
+}
+
+#my_Info_picture img {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+#my_Info_name {
+  margin-bottom: 10px;
+}
+
+#my_Info_modify_btn {
+  padding: 10px;
+  background-color: #ff1493; /* 핑크 버튼 */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#my_Info_modify_btn:hover {
+  background-color: #ff007f; /* 버튼 호버 시 색 변경 */
+}
+
+#divide {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list {
+  width: 48%;
+  background-color: #fff;
+  border: 1px solid #ff8fb3;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#divide section {
+  margin-right: 20px;
+}
+
+#divide h2 {
+  border-bottom: 2px solid #ff007f; /* 핑크 섹션 타이틀 밑줄 */
+  padding-bottom: 10px;
+  color: #ff007f;
+}
+
+.min-product {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.min-product_proImage img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 10px;
+}

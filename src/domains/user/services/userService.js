@@ -36,3 +36,14 @@ export const registerProduct = async (userId, productId) => {
   user.products.push(productId);
   await user.save();
 };
+
+export const userDetail = async (userId) => {
+  const user = await User.findById(userId).populate([
+    { path: "products", select: "title fileUrl" },
+    { path: "orders", select: "title fileUrl" },
+  ]);
+  if (!user) {
+    throw new NotFoundError("요청하신 유저는 존재하지 않습니다.");
+  }
+  return user;
+};

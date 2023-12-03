@@ -4,11 +4,13 @@ import * as ProductService from "../services/productService";
 
 export const getProductList = async (req, res) => {
   const products = await ProductService.findAll();
-  return res.render("home", { products });
+  const pageTitle = "Home";
+  return res.render("home", { products, pageTitle });
 };
 
 export const getUpload = (req, res) => {
-  return res.render("upload");
+  const pageTitle = "Upload";
+  return res.render("upload", { pageTitle });
 };
 
 export const postProduct = async (req, res, next) => {
@@ -34,7 +36,8 @@ export const getProduct = async (req, res, next) => {
   } = req;
   try {
     const product = await ProductService.productDetail(id);
-    return res.render("productDetail", { product });
+    const pageTitle = product.title;
+    return res.render("productDetail", { product, pageTitle });
   } catch (error) {
     next(error);
   }

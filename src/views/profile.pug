@@ -1,0 +1,29 @@
+extends base
+include mixins/min-product
+
+block content
+    section#my_Info
+        h2 내 정보
+        div#my_Info_picture
+            img(src="/uploads/products/b61ecfe7256dfeaf8b71d9e329acaa46" alt="프로필 사진")
+        div#my_Info_name
+            p 유저 이름: #{user.username}
+        button#my_Info_modify_btn 회원 정보 수정
+    div#divide
+        section#my_purchase.list
+            h2 구매 목록: #{Number(user.orders.length)}
+            div#my_purchase_area
+                each order in user.orders
+                    +minProduct(order)
+                    hr.my_purchase_bar
+                else 
+                    span 구매한 상품이 없습니다.
+
+        section#my_sales.list
+            h2 판매 목록: #{Number(user.products.length)}
+            div#my_sales_area
+                each product in user.products
+                    +minProduct(product)
+                    hr.my_sales_bar
+                else 
+                    span 판매한 상품이 없습니다.

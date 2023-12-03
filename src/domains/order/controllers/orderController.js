@@ -10,7 +10,8 @@ export const getOrderConfirm = async (req, res, next) => {
   } = req;
   try {
     const product = await OrderService.confirm({ productId, userId });
-    return res.render("buy-confirm", { product });
+    const pageTitle = "구매 확인";
+    return res.render("buy-confirm", { product, pageTitle });
   } catch (error) {
     if (error instanceof ValidationError) {
       return res.redirect("/my-profile");

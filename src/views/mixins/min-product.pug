@@ -1,0 +1,6 @@
+mixin minProduct(product)
+    a.min-product(href=`/products/${product._id}`)
+        div.min-product_proImage
+            img(src=`/${product.fileUrl}` alt="상품 이미지")
+        div.min-product_proName
+            p 상품명: #{product.title}
