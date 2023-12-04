@@ -9,6 +9,7 @@
 @import url("./screens/join.css");
 @import url("./screens/productDetail.css");
 @import url("./screens/profile.css");
+@import url("./screens/upload.css");
 
 body {
   font-family: Arial, sans-serif;

@@ -1,14 +1,15 @@
 extends base
 
 block content
-    h1 상품 업로드
-    form(id="uploadForm" action="/products" method="post" enctype="multipart/form-data")
-        label(for="upload_title") 제목
-        input(type="text" id="upload_title" name="title" required)
-        label(for="upload_image") 이미지 업로드
-        input(type="file" id="upload_image" name="product" accept="image/*" required)
-        label(for="upload_price") 가격:
-        input(type="number" id="upload_price" name="price" required)
-        label(for="upload_details") 상세설명:
-        textarea(id="upload_details" name="description" rows="4" required)
-        input(type="submit" value="상품 업로드")
+    section.upload
+        form(id="uploadForm" action="/products" method="post" enctype="multipart/form-data")
+            h1 상품 업로드
+            label(for="upload_title") 제목
+            input(type="text" id="upload_title" name="title" required)
+            label(for="upload_image") 이미지 업로드
+            input(type="file" id="upload_image" name="product" accept="image/*" required)
+            label(for="upload_price") 가격:
+            input(type="number" id="upload_price" name="price" required)
+            label(for="upload_details") 상세설명:
+            textarea(id="upload_details" name="description" rows="4" required)
+            input(type="submit" value="상품 업로드")
